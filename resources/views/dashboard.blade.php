@@ -34,7 +34,6 @@
                 <div class="p-6 text-gray-900 dark:text-green-400">
                     <a href="{{ route('books.register') }}">{{ __('Register Book')}}</a>
                 </div>
-        
 
                 <div class="p-6 text-gray-900 dark:text-green-400">
                     <a href="{{ route('books.list') }}">{{ __('List Books')}}</a>

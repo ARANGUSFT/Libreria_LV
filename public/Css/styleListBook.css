@@ -1,0 +1,24 @@
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 75%;
+    background-color: rgb(204, 205, 206);
+    margin: 50px auto 0; /* Centra la tabla horizontalmente y establece un margen superior de 20px */
+  }
+  
+  
+  td{
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+
+  th{
+      border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #858884;
+  }

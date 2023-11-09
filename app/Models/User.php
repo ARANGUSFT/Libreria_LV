@@ -8,6 +8,10 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
+// Se importa la libreria
+use Illuminate\Database\Eloquent\Relations\HasMany;
+
+
 class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
@@ -42,4 +46,10 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    // Cada vez que se tenga un usuario se podra acceder al chirp y este muestra todos los chirps relacionados a este usuario
+    public function book(): HasMany
+    {
+        return $this->hasMany(Books::class);
+    }
 }

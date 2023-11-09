@@ -31,8 +31,16 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
 
-    Route::get('/ListBooks', [BooksController::class, 'index'])->name('books.list');
+    // Una permite cargar el formulario y la otra envia la informacion
+    Route::get('/RegisterBooks', [BooksController::class, 'index'])->name('books.form');
     Route::post('/RegisterBooks', [BooksController::class, 'store'])->name('books.register');
+
+    // Listado de Libros
+    Route::get('/ListBooks', [BooksController::class, 'list'])->name('books.list');
+    
+    // GET permite cargar el form y PUT actualizar la informacion
+    Route::get('/Books/{books}/edit', [BooksController::class, 'edit'])->name('books.edit');
+    Route::put('/Books/{books}', [BooksController::class, 'update'] )->name('books.update');
 
 });
 

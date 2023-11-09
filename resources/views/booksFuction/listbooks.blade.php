@@ -1,14 +1,44 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
 
-    <h1>Hola desde el listado</h1>
+  
+  
+
+    <x-app-layout>
+        <x-slot name="header">
+            <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
+                {{ __('Register Book') }}
+            </h2>
+        </x-slot>
     
-</body>
-</html>
+    
+        <table>
+              
+            <tr>
+              <th>Usuario</th>
+              <th>Nombre Tarea</th>
+              <th>Categoria</th>
+              <th>Total Paginas</th>
+              <th>Descripcion</th>
+              <th>Acciones</th>
+            </tr>
+    
+            @foreach($books as $datos )
+             <tr>
+                {{-- Para llamar el nombre se deben ajustar unas cosas en el modelo --}}
+                <th>{{ $datos->user->name }}</th>
+                <td>{{ $datos->tittle }}</td>
+                <td>{{ $datos->category }}</td>
+                <td>{{ $datos->pages }}</td>
+                <td>{{ $datos->description }}</td>
+                <td><a href="{{ route('books.edit', $datos)}}">{{ __('Edit Book')}}</a>
+
+                </td>
+
+             </tr>
+            @endforeach
+    
+        </table> 
+    
+    
+    
+    </x-app-layout>
+    
