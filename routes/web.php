@@ -42,6 +42,9 @@ Route::middleware('auth')->group(function () {
     Route::get('/Books/{books}/edit', [BooksController::class, 'edit'])->name('books.edit');
     Route::put('/Books/{books}', [BooksController::class, 'update'] )->name('books.update');
 
+    Route::delete('/Books/{books}', [BooksController::class, 'destroy'] )->name('books.destroy');
+
+
 });
 
 

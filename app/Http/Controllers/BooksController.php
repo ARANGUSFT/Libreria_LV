@@ -100,6 +100,10 @@ class BooksController extends Controller
     
     public function destroy(Books $books)
     {
-        //
+        $books->delete();
+
+        return to_route('books.list')
+        ->with('status', __('Book delete successfully')); 
+        
     }
 }

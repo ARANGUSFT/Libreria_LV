@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-            {{ __('Edit Books') }}
+            {{ __('Edit Book') }}
         </h2>
     </x-slot>
 
@@ -17,7 +17,7 @@
             <input placeholder="{{ __('Pages')}}" name="pages" value="{{ old('pages', $books->pages) }}"  type="text" required>
             <textarea placeholder="{{ __('Description')}}" name="description" required>{{ old('description', $books->description) }}</textarea>
 
-             {{-- Muestra el boton --}}
+            
              <x-primary-button class="mt-4" >
                 {{ __('Update') }}
             </x-primary-button>
