@@ -13,9 +13,17 @@
             <h4>{{ __('Section to edit books')}}</h4>
      
             <input placeholder="{{ __('Tittle')}}" name="tittle" value="{{ old('tittle', $books->tittle) }}"  type="text" required>
+            <x-input-error :messages="$errors->get('tittle')" class="mt-2" />
+
             <input placeholder="{{ __('Category')}}" name="category" value="{{ old('category', $books->category) }}"  type="text" required>
+            <x-input-error :messages="$errors->get('category')" class="mt-2" />
+
             <input placeholder="{{ __('Pages')}}" name="pages" value="{{ old('pages', $books->pages) }}"  type="text" required>
+            <x-input-error :messages="$errors->get('pages')" class="mt-2" />
+
             <textarea placeholder="{{ __('Description')}}" name="description" required>{{ old('description', $books->description) }}</textarea>
+            <x-input-error :messages="$errors->get('description')" class="mt-2" />
+
 
             
              <x-primary-button class="mt-4" >
