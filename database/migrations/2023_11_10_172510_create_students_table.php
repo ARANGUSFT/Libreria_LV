@@ -11,13 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('books', function (Blueprint $table) {
+        Schema::create('students', function (Blueprint $table) {
             $table->id();
-            $table->string('tittle',150);
-            $table->string('description',150);
-            $table->string('pages',150);
-            $table->string('category',150);
-            $table->foreignId('user_id')->constrained()->cascadeOnDelete();
+            $table->string('name',150);
+            $table->string('lastname',150);
+            $table->string('course',150);
+            $table->string('gmail',255);
+            $table->foreignId('book_id')->nullable()->constrained('books')->nullOnDelete();
             $table->timestamps();
         });
     }
@@ -26,7 +26,7 @@ return new class extends Migration
      * Reverse the migrations.
      */
     public function down(): void
-    {   
-        Schema::dropIfExists('books');
+    {
+        Schema::dropIfExists('students');
     }
 };

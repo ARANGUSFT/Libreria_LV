@@ -24,21 +24,73 @@
                     </x-nav-link>
                 </div>
 
+                
+            <!-- Dropdown Book-->
+            <div class="hidden sm:flex sm:items-center sm:ms-6">
+                <x-dropdown align="right" width="48">
 
-                 <!-- Navigation Links Register Books -->
-                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link :href="route('books.register')" :active="request()->routeIs('dashboard')">
-                        {{ __('Register Book') }}
-                    </x-nav-link>
-                </div>
+                    <x-slot name="trigger">
+                        <button class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 dark:text-gray-400 bg-white dark:bg-gray-800 hover:text-gray-700 dark:hover:text-gray-300 focus:outline-none transition ease-in-out duration-150">
+                            <div>{{ __('Books') }}</div>
+                        </button>
+                    </x-slot>
+
+                    
+                    <x-slot name="content">
+                        <!-- Navigation Links Register Books -->
+                        <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                            <x-nav-link :href="route('books.register')" :active="request()->routeIs('dashboard')">
+                                {{ __('Register Book') }}
+                            </x-nav-link>
+                        </div>
 
 
-                <!-- Navigation Links List Books -->
-                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link :href="route('books.list')" :active="request()->routeIs('dashboard')">
-                        {{ __('List Books') }}
-                    </x-nav-link>
-                </div>
+                        <!-- Navigation Links List Books -->
+                        <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                            <x-nav-link :href="route('books.list')" :active="request()->routeIs('dashboard')">
+                                {{ __('List Books') }}
+                            </x-nav-link>
+                        </div>
+                    </x-slot>
+
+                </x-dropdown>
+            </div>
+
+
+            <!-- Dropdown Student -->
+            <div class="hidden sm:flex sm:items-center sm:ms-6">
+                <x-dropdown align="right" width="48">
+
+                    <x-slot name="trigger">
+                        <button class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 dark:text-gray-400 bg-white dark:bg-gray-800 hover:text-gray-700 dark:hover:text-gray-300 focus:outline-none transition ease-in-out duration-150">
+                            <div>{{ __('Students') }}</div>
+                        </button>
+                    </x-slot>
+
+                    
+                    <x-slot name="content">
+                        <!-- Navigation Links Register Books -->
+                        <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                            <x-nav-link :href="route('students.register')" :active="request()->routeIs('dashboard')">
+                                {{ __('Register Student') }}
+                            </x-nav-link>
+                        </div>
+
+
+                        <!-- Navigation Links List Books -->
+                        <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                            <x-nav-link :href="route('students.list')" :active="request()->routeIs('dashboard')">
+                                {{ __('List Student') }}
+                            </x-nav-link>
+                        </div>
+                    </x-slot>
+
+                </x-dropdown>
+            </div>
+
+            
+
+
                 
             </div>
 

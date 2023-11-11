@@ -42,10 +42,10 @@ class BooksController extends Controller
         // Crear un nuevo libro relacionado con el usuario autenticado
         // El "book" viene desde el modelo User
         auth()->user()->book()->create([
-            'tittle' => $request->get('tittle'),
-            'category' => $request->get('category'),
-            'pages' => $request->get('pages'),
-            'description' => $request->get('description'),
+            'tittle' => $request->input('tittle'),
+            'category' => $request->input('category'),
+            'pages' => $request->input('pages'),
+            'description' => $request->input('description'),
         ]);
     
         // Mensaje de éxito
